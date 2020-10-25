@@ -1,6 +1,6 @@
 # [mentomento](https://mentomento.vercel.app/)
 
-![](public/mentomento.png)
+[![](public/mentomento.png)](https://mentomento.vercel.app/)
 
 https://mentomento.vercel.app/
 
