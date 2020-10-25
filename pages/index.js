@@ -1,6 +1,96 @@
 import Head from "next/head";
 
 export default function Home() {
+  const helpSections = [
+    {
+      name: "Fullstack Web Development",
+      icon: "/icons/react.svg",
+      list: [
+        "React, Next.js, React Hooks, GraphQL, Apollo",
+        "Serverless Functions with Netlify, Vercel",
+        "Engineering and Architecture creation",
+      ],
+    },
+    {
+      name: "Job Hunting and Networking",
+      icon: "/icons/cv.svg",
+      list: [
+        "Finding the right company for you",
+        "Networking with LinkedIn",
+        "Overcoming Interview fears",
+        "Mock Interviews",
+      ],
+    },
+    {
+      name: "Exclusive Videos and Articles",
+      icon: "/icons/video.svg",
+      list: [
+        "Written tutorials on development with React or NextJS",
+        "Networking and job hunting Video examples",
+      ],
+    },
+  ];
+
+  const pricingSections = [
+    {
+      name: "Basic - 20€",
+      list: ["One Call every month", "Curriculum Reviews", "Weekly Reviews"],
+    },
+    {
+      name: "Extra - 40€",
+      list: [
+        "Two Calls every month",
+        "Support on personal projects",
+        "Mock Interviews",
+      ],
+    },
+    {
+      name: "Basic - 60€",
+      list: ["Three Calls every month", "Private Chat", "Weekly Reviews"],
+    },
+  ];
+
+  function sectionGrid(sectionsGrid) {
+    return sectionsGrid.map((section) => (
+      <div class="w-full md:w-1/2 xl:w-1/3 p-4 flex-grow">
+        <div class="border border-gray-300 p-6 rounded-lg w-full">
+          {section.icon && section.icon !== "" && (
+            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full mb-4">
+              <img alt="react logo" src={section.icon} />
+            </div>
+          )}
+
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+            {section.name}
+          </h2>
+          <p class="leading-relaxed text-base w-full">
+            <ul class="list-decimal ml-6">
+              {section.list.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </ul>
+          </p>
+        </div>
+      </div>
+    ));
+  }
+
+  function sectionHeading(heading) {
+    return (
+      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">
+          {heading.title}
+        </h1>
+        <p class="text-base leading-relaxed w-2/4 mx-auto">
+          {heading.description}
+        </p>
+        <div class="flex mt-6 justify-center">
+          <div class="w-16 h-1 rounded-full bg-blue-800 inline-flex"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="">
       <Head>
@@ -79,51 +169,24 @@ export default function Home() {
 
         <section class="text-gray-700 body-font">
           <div class="container px-5 py-24 mx-auto">
-            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-              <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">
-                What can you help me with?
-              </h1>
-              <p class="text-base leading-relaxed w-2/4 mx-auto">
-                Working together towards a common set of goals will be our focus
-                along this process!
-              </p>
-              <div class="flex mt-6 justify-center">
-                <div class="w-16 h-1 rounded-full bg-blue-800 inline-flex"></div>
-              </div>
-            </div>
+            {sectionHeading({
+              title: " What can you help me with?",
+              description:
+                "Working together towards a common set of goals will be our focus along this process!",
+            })}
+            <div class="flex flex-wrap -m-4">{sectionGrid(helpSections)}</div>
+          </div>
+        </section>
 
+        <section class="text-gray-700 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            {sectionHeading({
+              title: " Mentoring Levels",
+              description:
+                "Each call will last from 30 minutes to 1 hour to keep us focused! \n Each level includes the previous levels tiers.",
+            })}
             <div class="flex flex-wrap -m-4">
-              <div class="xl:w-1/3 md:w-1/2 p-4">
-                <div class="border border-gray-300 p-6 rounded-lg">
-                  <div class="w-20 h-20 inline-flex items-center justify-center rounded-full mb-4">
-                    <img alt="react logo" src="/icons/react.svg" />
-                  </div>
-                  <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
-                    Software Engineering and Fullstack Web Development
-                  </h2>
-                  <p class="leading-relaxed text-base">
-                    React, Next.js, React Hooks, GraphQL, VueJs, Apollo,
-                    Serverless Functions with Netlify, Vercel or Cloudflare
-                    Workers.
-                  </p>
-                </div>
-              </div>
-
-              <div class="xl:w-1/3 md:w-1/2 p-4">
-                <div class="border border-gray-300 p-6 rounded-lg">
-                  <div class="w-20 h-20 inline-flex items-center justify-center rounded-full mb-4">
-                    <img alt="curriculum vitae" src="/icons/cv.svg" />
-                  </div>
-                  <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
-                    Job Hunting and Networking
-                  </h2>
-                  <p class="leading-relaxed text-base">
-                    Finding the right company for you.
-                    <br /> Networking with LinkedIn. <br /> Overcoming Interview
-                    fears <br /> Test Interviews.
-                  </p>
-                </div>
-              </div>
+              {sectionGrid(pricingSections)}
             </div>
           </div>
         </section>
