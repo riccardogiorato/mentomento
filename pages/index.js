@@ -96,6 +96,10 @@ export default function Home() {
     <div className="">
       <Head>
         <title>mentomento</title>
+        <meta
+          name="Description"
+          content="Reach your Professional and Development Goals with a simple Mentoring!"
+        ></meta>
         <link rel="icon" href="/icons/favicon.png" />
       </Head>
 
