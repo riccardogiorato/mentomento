@@ -1,8 +1,8 @@
-# [mentomento](https://mentomento.vercel.app/)
+# [mentomento](https://mentomento.riccardogiorato.com/)
 
-[![](public/mentomento.png)](https://mentomento.vercel.app/)
+[![](public/mentomento.png)](https://mentomento.riccardogiorato.com/)
 
-https://mentomento.vercel.app/
+https://mentomento.riccardogiorato.com/
 
 Working together towards a common set of goals will be our focus along this process!
 
