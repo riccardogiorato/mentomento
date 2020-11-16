@@ -34,11 +34,11 @@ export default function Home() {
 
   const pricingSections = [
     {
-      name: "Basic - 20€",
-      list: ["One Call every month", "Curriculum Reviews", "Weekly Reviews"],
+      name: "😃 Basic - 20€",
+      list: ["One Call every month", "Curriculum Reviews", "Medium Articles"],
     },
     {
-      name: "Extra - 40€",
+      name: "🤖 Extra - 40€",
       list: [
         "Two Calls every month",
         "Support on personal projects",
@@ -46,14 +46,18 @@ export default function Home() {
       ],
     },
     {
-      name: "Basic - 60€",
-      list: ["Three Calls every month", "Private Chat", "Weekly Reviews"],
+      name: "🐱‍👤 Ninja - 60€",
+      list: ["Three Calls every month", "Private Chat", "Code Reviews"],
+    },
+    {
+      name: "😎 Boss - 80€",
+      list: ["Four Calls every month", "Private Chat", "Weekly Reviews"],
     },
   ];
 
   function sectionGrid(sectionsGrid) {
     return sectionsGrid.map((section) => (
-      <div className="w-full md:w-1/2 xl:w-1/3 p-4 flex-grow">
+      <div className="w-full md:w-1/2 xl:w-1/4 p-4 flex-grow">
         <div className="border border-gray-300 p-6 rounded-lg w-full">
           {section.icon && section.icon !== "" && (
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full mb-4">
