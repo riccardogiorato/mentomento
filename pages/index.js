@@ -32,7 +32,7 @@ export default function Home() {
     },
   ];
 
-  const pricingSections = [
+  /*   const pricingSections = [
     {
       name: "😃 Basic - 20€",
       list: ["One Call every month", "Curriculum Reviews", "Medium Articles"],
@@ -53,7 +53,7 @@ export default function Home() {
       name: "😎 Boss - 80€",
       list: ["Four Calls every month", "Private Chat", "Weekly Reviews"],
     },
-  ];
+  ]; */
 
   function sectionGrid(sectionsGrid) {
     return sectionsGrid.map((section) => (
@@ -189,7 +189,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-gray-700 body-font">
+        {/* <section className="text-gray-700 body-font">
           <div className="container px-5 py-24 mx-auto">
             {sectionHeading({
               title: " Mentoring Levels",
@@ -200,7 +200,7 @@ export default function Home() {
               {sectionGrid(pricingSections)}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
